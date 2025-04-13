@@ -75,9 +75,11 @@ ol {
 
 /* Общие стили для кнопок */
 .button {
+  padding: 6px 0 5px; /* Заменить на padding !!! */
   border: 1px solid #fff;
   color: #fff;
   font-family: inherit;
+  font-weight: 700;
   font-size: 18px;
   letter-spacing: 0;
   background-color: transparent;
@@ -86,9 +88,7 @@ ol {
 /* Основа - Заголовок "Посмотри в окно" */
 .title {
   width: 259px;
-  height: 210px;
-  margin-bottom: 26px;
-  padding-top: 2px;
+  margin-bottom: 21px;
   font-family: "Oswald", sans-serif;
   font-size: 75px;
   line-height: 94%;
@@ -126,7 +126,6 @@ ol {
 
 /* Форма поиска - заголовки */
 .search-form__fieldset-title {
-  min-height: 22px;
   margin-bottom: 5px;
   font-weight: 400;
   font-size: 18px;
@@ -140,7 +139,7 @@ ol {
   border: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  color: rgba(255, 255, 255, 0.7);
+  color: #fff;
   font-family: inherit;
   font-size: 18px;
   letter-spacing: 0;
@@ -187,7 +186,6 @@ ol {
 .search-form__submit-button {
   align-self: flex-end;
   width: 194px;
-  height: 34px;
 }
 
 /* Основа - результаты поиска */
@@ -200,12 +198,12 @@ ol {
   width: 100%;
   height: 298px;
   overflow-y: auto;
+  padding: 1px 0;
 }
 
 /* Результаты поиска - Кнопка "Показать еще" */
 .more-button {
   width: calc(100% - 5px);
-  height: 34px;
   margin: 30px 0 2px 2px;
 }
 
@@ -218,7 +216,7 @@ ol {
 
 /* Карточка */
 .content__list-item {
-  margin: 0 3px 0 2px;
+  padding: 0 3px 0 2px;
 }
 
 .content__video-card {
@@ -256,19 +254,21 @@ ol {
 
 /* Карточка - Заголовок карточки */
 .content__video-card-title {
-  margin-bottom: -1px;
+  margin: 2px 0;
   overflow: hidden;
   font-family: "Oswald", sans-serif;
   font-size: 30px;
   letter-spacing: 0;
   text-transform: uppercase;
   text-overflow: ellipsis;
-  transform: translateY(-4px);
+  line-height: 30px;
+  white-space: nowrap;
 }
 
 /* Карточка - основной текст карточки */
 .content__video-card-description {
   display: -webkit-box;
+  margin: 2px 0;
   overflow: hidden;
   overflow-wrap: break-word;
   font-weight: 400;
@@ -278,7 +278,6 @@ ol {
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
-  transform: translateY(-4px);
 }
 
 /* Состояния элементов - HOVER */
@@ -298,7 +297,7 @@ ol {
 }
 
 /* Карточка - HOVER */
-.content__list-item:hover {
+.content__card-link:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
 }
@@ -315,7 +314,7 @@ ol {
 }
 
 /* Карточка - ACTIVE */
-.content__video-card-description-container:active {
+.content__card-link:active {
   background-color: rgba(84, 80, 80, 1);
 }
 
@@ -331,23 +330,21 @@ ol {
   outline-offset: 1px;
 }
 
-/* Поисковая строка - FOCUS-VISIBLE */
+/* Поисковая строка и Чекбокс - FOCUS-VISIBLE */
 .search-form__textfield:focus {
   outline: none;
 }
 
-.search-form__label:has(.search-form__textfield:focus-visible) {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-}
-
-/* Чекбокс - FOCUS-VISIBLE */
-.search-form__label:has(.search-form__checkbox:focus-visible) {
+.search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
 
 /* Карточка - FOCUS-VISIBLE */
+.content__card-link:focus {
+  outline: none;
+}
+
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 0px;
